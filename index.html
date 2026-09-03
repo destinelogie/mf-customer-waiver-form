@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Device Repair Waiver & Intake Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    touch-action: manipulation;
+    canvas { touch-action: none; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 antialiased min-h-screen py-6 px-4 sm:px-6">
+
+  <div class="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-200">
+    <!-- Header -->
+    <div class="bg-slate-900 text-white p-6 flex justify-between items-center flex-wrap gap-4">
+      <div>
+        <h1 class="text-2xl font-bold tracking-tight">Phone Repair Intake Waiver</h1>
+        <p class="text-xs text-gray-400 mt-1">Pre-repair inspection & customer authorization</p>
+      </div>
+      <div class="bg-slate-800 px-4 py-2 rounded-lg border border-slate-700 text-right">
+        <span class="text-xs text-gray-400 block uppercase tracking-wider">Waiver ID</span>
+        <span id="waiverIdDisplay" class="text-lg font-mono font-bold text-amber-400">Generating...</span>
+      </div>
+    </div>
+
+    <form id="intakeForm" class="p-6 space-y-8">
+      
+      <!-- Customer & Device Information -->
+      <div class="space-y-4">
+        <h2 class="text-lg font-semibold text-slate-800 border-b pb-2">1. Customer & Device Details</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Customer Full Name *</label>
+            <input type="text" id="customerName" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Phone Number *</label>
+            <input type="tel" id="customerPhone" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Email Address</label>
+            <input type="email" id="customerEmail" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">Device Model (e.g. Galaxy S22, iPhone 13) *</label>
+            <input type="text" id="deviceModel" required class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+        </div>
+      </div>
+
+      <!-- Device Checkgrid -->
+      <div class="space-y-4">
+        <h2 class="text-lg font-semibold text-slate-800 border-b pb-2">2. Pre-Repair Functional Checklist</h2>
+        <p class="text-xs text-gray-500">Check items that are operational upon receipt. Leave unchecked if broken or untestable.</p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="Display / Touch Screen" class="w-4 h-4 text-blue-600 rounded">
+            <span>Display / Touch</span>
+          </label>
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="LCD / OLED Quality" class="w-4 h-4 text-blue-600 rounded">
+            <span>LCD / Lines / Spots</span>
+          </label>
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="Front Camera" class="w-4 h-4 text-blue-600 rounded">
+            <span>Front Camera</span>
+          </label>
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="Rear Camera" class="w-4 h-4 text-blue-600 rounded">
+            <span>Rear Camera</span>
+          </label>
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="Back Glass / Body" class="w-4 h-4 text-blue-600 rounded">
+            <span>Back Glass / Body</span>
+          </label>
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="Charging Port" class="w-4 h-4 text-blue-600 rounded">
+            <span>Charging Port</span>
+          </label>
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="Speakers & Mic" class="w-4 h-4 text-blue-600 rounded">
+            <span>Speakers & Mic</span>
+          </label>
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="Face ID / Touch ID" class="w-4 h-4 text-blue-600 rounded">
+            <span>Face ID / Touch ID</span>
+          </label>
+          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
+            <input type="checkbox" name="checklist" value="Power / Volume Buttons" class="w-4 h-4 text-blue-600 rounded">
+            <span>Volume / Power</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Security / Lock Credentials -->
+      <div class="space-y-4">
+        <h2 class="text-lg font-semibold text-slate-800 border-b pb-2">3. Device Security Lock</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          
+          <div>
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-1">PIN / Password Passcode</label>
+            <input type="text" id="passcode" placeholder="e.g. 1234 or Password" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+            <p class="text-xs text-gray-400 mt-2">Used strictly for post-repair quality assurance testing.</p>
+          </div>
+
+          <!-- Android 9-Dot Pattern Drawer -->
+          <div class="flex flex-col items-center bg-gray-50 p-4 rounded-xl border">
+            <label class="block text-xs font-semibold uppercase text-gray-600 mb-2">Android Pattern Lock (Draw below)</label>
+            <div class="relative bg-slate-900 rounded-xl p-2 shadow-inner">
+              <canvas id="patternCanvas" width="260" height="260" class="rounded-lg cursor-crosshair"></canvas>
+            </div>
+            <div class="flex items-center justify-between w-full max-w-[260px] mt-2">
+              <span id="patternSeqText" class="text-xs font-mono text-gray-500">Pattern: None</span>
+              <button type="button" onclick="clearPattern()" class="text-xs text-red-600 hover:underline">Clear Pattern</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Legal Disclaimer & Terms -->
+      <div class="space-y-3">
+        <h2 class="text-lg font-semibold text-slate-800 border-b pb-2">4. Terms & Conditions Waiver</h2>
+        <div class="bg-gray-50 p-4 border rounded-lg text-xs text-gray-600 leading-relaxed h-32 overflow-y-auto space-y-2">
+          <p><strong>1. Data Disclaimer:</strong> The customer is responsible for backing up all device data prior to repair. The shop assumes no liability for loss of personal files, software, or media during service.</p>
+          <p><strong>2. Pre-existing Conditions:</strong> Devices with prior water damage, bent frames, or motherboard issues may experience further degradation during disassembly. The shop is not liable for secondary defects.</p>
+          <p><strong>3. Unclaimed Devices:</strong> Devices left unclaimed for more than 30 days past service completion will be considered abandoned and disposed of or recycled to cover repair costs.</p>
+        </div>
+        
+        <label class="flex items-center space-x-2 cursor-pointer mt-2">
+          <input type="checkbox" id="termsAccepted" required class="w-4 h-4 text-blue-600 rounded">
+          <span class="text-sm text-gray-700 font-medium">I agree to the Terms & Conditions outlined above.</span>
+        </label>
+      </div>
+
+      <!-- Signature Field -->
+      <div class="space-y-3">
+        <div class="flex justify-between items-center border-b pb-2">
+          <h2 class="text-lg font-semibold text-slate-800">5. Customer Authorization Signature</h2>
+          <button type="button" onclick="clearSignature()" class="text-xs text-red-600 hover:underline">Clear Signature</button>
+        </div>
+        <div class="border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 p-1">
+          <canvas id="signatureCanvas" width="650" height="160" class="w-full bg-white rounded-lg cursor-crosshair h-36"></canvas>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitBtn" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-xl shadow-lg transition duration-200">
+        Submit Authorization & Waiver
+      </button>
+
+    </form>
+  </div>
+
+  <script>
+    // --- 1. SUPABASE INITIALIZATION ---
+    const SUPABASE_URL = "YOUR_SUPABASE_URL";
+    const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Display temporary preview ID
+    document.getElementById('waiverIdDisplay').innerText = `WVR-${new Date().getFullYear()}-XXXX`;
+
+    // --- 2. ANDROID 9-DOT PATTERN CANVAS LOGIC ---
+    const pCanvas = document.getElementById('patternCanvas');
+    const pCtx = pCanvas.getContext('2d');
+    const dots = [];
+    let patternPath = [];
+    let isDrawingPattern = false;
+
+    // Build 3x3 Dot Grid Coordinates
+    const spacing = pCanvas.width / 4;
+    for (let r = 0; r < 3; r++) {
+      for (let c = 0; c < 3; c++) {
+        dots.push({
+          id: r * 3 + c + 1,
+          x: spacing * (c + 1),
+          y: spacing * (r + 1),
+          radius: 12
+        });
+      }
+    }
+
+    function drawPatternGrid() {
+      pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+      
+      // Draw connecting lines
+      if (patternPath.length > 1) {
+        pCtx.beginPath();
+        pCtx.strokeStyle = '#3b82f6'; // Blue line
+        pCtx.lineWidth = 6;
+        pCtx.lineCap = 'round';
+        pCtx.lineJoin = 'round';
+        const start = dots.find(d => d.id === patternPath[0]);
+        pCtx.moveTo(start.x, start.y);
+        for (let i = 1; i < patternPath.length; i++) {
+          const pt = dots.find(d => d.id === patternPath[i]);
+          pCtx.lineTo(pt.x, pt.y);
+        }
+        pCtx.stroke();
+      }
+
+      // Draw dots
+      dots.forEach(dot => {
+        const isSelected = patternPath.includes(dot.id);
+        pCtx.beginPath();
+        pCtx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        pCtx.fillStyle = isSelected ? '#3b82f6' : '#64748b';
+        pCtx.fill();
+
+        if (isSelected) {
+          pCtx.beginPath();
+          pCtx.arc(dot.x, dot.y, dot.radius + 6, 0, Math.PI * 2);
+          pCtx.strokeStyle = 'rgba(59, 130, 246, 0.4)';
+          pCtx.lineWidth = 4;
+          pCtx.stroke();
+        }
+      });
+    }
+
+    function handlePatternTouch(clientX, clientY) {
+      const rect = pCanvas.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
+
+      dots.forEach(dot => {
+        const dist = Math.hypot(dot.x - x, dot.y - y);
+        if (dist < 25 && !patternPath.includes(dot.id)) {
+          patternPath.push(dot.id);
+          document.getElementById('patternSeqText').innerText = `Pattern: ${patternPath.join('-')}`;
+        }
+      });
+      drawPatternGrid();
+    }
+
+    pCanvas.addEventListener('mousedown', (e) => { isDrawingPattern = true; handlePatternTouch(e.clientX, e.clientY); });
+    pCanvas.addEventListener('mousemove', (e) => { if (isDrawingPattern) handlePatternTouch(e.clientX, e.clientY); });
+    window.addEventListener('mouseup', () => { isDrawingPattern = false; });
+
+    pCanvas.addEventListener('touchstart', (e) => { 
+      isDrawingPattern = true; 
+      handlePatternTouch(e.touches[0].clientX, e.touches[0].clientY); 
+    }, {passive: true});
+    pCanvas.addEventListener('touchmove', (e) => { 
+      if (isDrawingPattern) handlePatternTouch(e.touches[0].clientX, e.touches[0].clientY); 
+    }, {passive: true});
+    window.addEventListener('touchend', () => { isDrawingPattern = false; });
+
+    function clearPattern() {
+      patternPath = [];
+      document.getElementById('patternSeqText').innerText = 'Pattern: None';
+      drawPatternGrid();
+    }
+    drawPatternGrid();
+
+    // --- 3. SIGNATURE CANVAS LOGIC ---
+    const sCanvas = document.getElementById('signatureCanvas');
+    const sCtx = sCanvas.getContext('2d');
+    let isDrawingSig = false;
+
+    sCtx.lineWidth = 2.5;
+    sCtx.lineCap = 'round';
+    sCtx.strokeStyle = '#0f172a';
+
+    function getSigPos(e) {
+      const rect = sCanvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      return { x: clientX - rect.left, y: clientY - rect.top };
+    }
+
+    sCanvas.addEventListener('mousedown', (e) => { isDrawingSig = true; sCtx.beginPath(); const pos = getSigPos(e); sCtx.moveTo(pos.x, pos.y); });
+    sCanvas.addEventListener('mousemove', (e) => { if (isDrawingSig) { const pos = getSigPos(e); sCtx.lineTo(pos.x, pos.y); sCtx.stroke(); } });
+    window.addEventListener('mouseup', () => { isDrawingSig = false; });
+
+    sCanvas.addEventListener('touchstart', (e) => { isDrawingSig = true; sCtx.beginPath(); const pos = getSigPos(e); sCtx.moveTo(pos.x, pos.y); }, {passive: true});
+    sCanvas.addEventListener('touchmove', (e) => { if (isDrawingSig) { const pos = getSigPos(e); sCtx.lineTo(pos.x, pos.y); sCtx.stroke(); } }, {passive: true});
+    window.addEventListener('touchend', () => { isDrawingSig = false; });
+
+    function clearSignature() {
+      sCtx.clearRect(0, 0, sCanvas.width, sCanvas.height);
+    }
+
+    // --- 4. SUBMIT FORM TO SUPABASE ---
+    const intakeForm = document.getElementById('intakeForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    intakeForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Ensure signature exists
+      const sigData = sCanvas.toDataURL();
+      const blankCanvas = document.createElement('canvas');
+      blankCanvas.width = sCanvas.width;
+      blankCanvas.height = sCanvas.height;
+      if (sigData === blankCanvas.toDataURL()) {
+        alert("Please provide a signature before submitting.");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Saving Submission...";
+
+      // Gather Checked Pre-inspection Items
+      const checklist = Array.from(document.querySelectorAll('input[name="checklist"]:checked')).map(el => el.value);
+
+      const payload = {
+        customer_name: document.getElementById('customerName').value,
+        customer_phone: document.getElementById('customerPhone').value,
+        customer_email: document.getElementById('customerEmail').value || null,
+        device_model: document.getElementById('deviceModel').value,
+        passcode: document.getElementById('passcode').value || null,
+        pattern_sequence: patternPath.length ? patternPath.join('-') : null,
+        pattern_image: patternPath.length ? pCanvas.toDataURL() : null,
+        checklist: checklist,
+        signature_image: sigData,
+        terms_accepted: document.getElementById('termsAccepted').checked
+      };
+
+      try {
+        const { data, error } = await supabase
+          .from('waivers')
+          .insert([payload])
+          .select('waiver_id')
+          .single();
+
+        if (error) throw error;
+
+        alert(`Waiver successfully saved!\nAssigned Waiver ID: ${data.waiver_id}`);
+        
+        // Reset Form for next customer
+        intakeForm.reset();
+        clearPattern();
+        clearSignature();
+      } catch (err) {
+        console.error("Supabase Error:", err);
+        alert(`Error saving form: ${err.message}`);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit Authorization & Waiver";
+      }
+    });
+  </script>
+</body>
+</html>

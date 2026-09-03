@@ -56,45 +56,130 @@
         <h2 class="text-lg font-semibold text-slate-800 border-b pb-2">2. Pre-Repair Functional Checklist</h2>
         <p class="text-xs text-gray-500">Check items that are operational upon receipt. Leave unchecked if broken or untestable.</p>
         
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="Display / Touch Screen" class="w-4 h-4 text-blue-600 rounded">
-            <span>Display / Touch</span>
-          </label>
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="LCD / OLED Quality" class="w-4 h-4 text-blue-600 rounded">
-            <span>LCD / Lines / Spots</span>
-          </label>
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="Front Camera" class="w-4 h-4 text-blue-600 rounded">
-            <span>Front Camera</span>
-          </label>
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="Rear Camera" class="w-4 h-4 text-blue-600 rounded">
-            <span>Rear Camera</span>
-          </label>
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="Back Glass / Body" class="w-4 h-4 text-blue-600 rounded">
-            <span>Back Glass / Body</span>
-          </label>
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="Charging Port" class="w-4 h-4 text-blue-600 rounded">
-            <span>Charging Port</span>
-          </label>
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="Speakers & Mic" class="w-4 h-4 text-blue-600 rounded">
-            <span>Speakers & Mic</span>
-          </label>
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="Face ID / Touch ID" class="w-4 h-4 text-blue-600 rounded">
-            <span>Face ID / Touch ID</span>
-          </label>
-          <label class="flex items-center space-x-2 p-2 bg-gray-50 rounded border cursor-pointer hover:bg-gray-100">
-            <input type="checkbox" name="checklist" value="Power / Volume Buttons" class="w-4 h-4 text-blue-600 rounded">
-            <span>Volume / Power</span>
-          </label>
+        <div id="cid_7" class="form-input-wide" data-layout="full">
+          <table role="table" aria-labelledby="label_7" cellpadding="4" cellspacing="0" class="form-matrix-table" data-component="matrix" data-dynamic="true">
+            <tbody><tr class="form-matrix-tr form-matrix-header-tr">
+              <th scope="col" class="form-matrix-th" style="border:none;color:transparent">Rows</th>
+              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0"><label id="label_7_col_0">Good</label></th>
+              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1"><label id="label_7_col_1">Damaged</label></th>
+              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2"><label id="label_7_col_2">Notes</label></th>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_0">Water Damaged</label></th>
+              <td class="form-matrix-values"><input id="input_7_0_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[0][0]" aria-label="Water Damaged Good" value="Good"><label for="input_7_0_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_0_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[0][1]" aria-label="Water Damaged Damaged" value="Damaged"><label for="input_7_0_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_0_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[0][2]" style="width:100%;box-sizing:border-box" aria-label="Water Damaged Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_1">Internal LCD / Screen Cracked</label></th>
+              <td class="form-matrix-values"><input id="input_7_1_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[1][0]" aria-label="Internal LCD / Screen Cracked Good" value="Good"><label for="input_7_1_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_1_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[1][1]" aria-label="Internal LCD / Screen Cracked Damaged" value="Damaged"><label for="input_7_1_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_1_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[1][2]" style="width:100%;box-sizing:border-box" aria-label="Internal LCD / Screen Cracked Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_2">Digitizer / Touch</label></th>
+              <td class="form-matrix-values"><input id="input_7_2_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[2][0]" aria-label="Digitizer / Touch Good" value="Good"><label for="input_7_2_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_2_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[2][1]" aria-label="Digitizer / Touch Damaged" value="Damaged"><label for="input_7_2_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_2_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[2][2]" style="width:100%;box-sizing:border-box" aria-label="Digitizer / Touch Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_3">Vibration</label></th>
+              <td class="form-matrix-values"><input id="input_7_3_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[3][0]" aria-label="Vibration Good" value="Good"><label for="input_7_3_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_3_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[3][1]" aria-label="Vibration Damaged" value="Damaged"><label for="input_7_3_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_3_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[3][2]" style="width:100%;box-sizing:border-box" aria-label="Vibration Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_4">Loudspeaker</label></th>
+              <td class="form-matrix-values"><input id="input_7_4_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[4][0]" aria-label="Loudspeaker Good" value="Good"><label for="input_7_4_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_4_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[4][1]" aria-label="Loudspeaker Damaged" value="Damaged"><label for="input_7_4_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_4_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[4][2]" style="width:100%;box-sizing:border-box" aria-label="Loudspeaker Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_5">Ear Speaker</label></th>
+              <td class="form-matrix-values"><input id="input_7_5_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[5][0]" aria-label="Ear Speaker Good" value="Good"><label for="input_7_5_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_5_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[5][1]" aria-label="Ear Speaker Damaged" value="Damaged"><label for="input_7_5_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_5_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[5][2]" style="width:100%;box-sizing:border-box" aria-label="Ear Speaker Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_6">Charging Port</label></th>
+              <td class="form-matrix-values"><input id="input_7_6_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[6][0]" aria-label="Charging Port Good" value="Good"><label for="input_7_6_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_6_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[6][1]" aria-label="Charging Port Damaged" value="Damaged"><label for="input_7_6_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_6_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[6][2]" style="width:100%;box-sizing:border-box" aria-label="Charging Port Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_7">Wi-Fi</label></th>
+              <td class="form-matrix-values"><input id="input_7_7_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[7][0]" aria-label="Wi-Fi Good" value="Good"><label for="input_7_7_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_7_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[7][1]" aria-label="Wi-Fi Damaged" value="Damaged"><label for="input_7_7_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_7_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[7][2]" style="width:100%;box-sizing:border-box" aria-label="Wi-Fi Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_8">Bluetooth</label></th>
+              <td class="form-matrix-values"><input id="input_7_8_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[8][0]" aria-label="Bluetooth Good" value="Good"><label for="input_7_8_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_8_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[8][1]" aria-label="Bluetooth Damaged" value="Damaged"><label for="input_7_8_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_8_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[8][2]" style="width:100%;box-sizing:border-box" aria-label="Bluetooth Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_9">Power Button</label></th>
+              <td class="form-matrix-values"><input id="input_7_9_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[9][0]" aria-label="Power Button Good" value="Good"><label for="input_7_9_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_9_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[9][1]" aria-label="Power Button Damaged" value="Damaged"><label for="input_7_9_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_9_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[9][2]" style="width:100%;box-sizing:border-box" aria-label="Power Button Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_10">Volume Up Button</label></th>
+              <td class="form-matrix-values"><input id="input_7_10_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[10][0]" aria-label="Volume Up Button Good" value="Good"><label for="input_7_10_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_10_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[10][1]" aria-label="Volume Up Button Damaged" value="Damaged"><label for="input_7_10_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_10_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[10][2]" style="width:100%;box-sizing:border-box" aria-label="Volume Up Button Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_11">Volume Down Button</label></th>
+              <td class="form-matrix-values"><input id="input_7_11_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[11][0]" aria-label="Volume Down Button Good" value="Good"><label for="input_7_11_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_11_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[11][1]" aria-label="Volume Down Button Damaged" value="Damaged"><label for="input_7_11_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_11_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[11][2]" style="width:100%;box-sizing:border-box" aria-label="Volume Down Button Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_12">Front Camera</label></th>
+              <td class="form-matrix-values"><input id="input_7_12_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[12][0]" aria-label="Front Camera Good" value="Good"><label for="input_7_12_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_12_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[12][1]" aria-label="Front Camera Damaged" value="Damaged"><label for="input_7_12_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_12_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[12][2]" style="width:100%;box-sizing:border-box" aria-label="Front Camera Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_13">Back Camera</label></th>
+              <td class="form-matrix-values"><input id="input_7_13_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[13][0]" aria-label="Back Camera Good" value="Good"><label for="input_7_13_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_13_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[13][1]" aria-label="Back Camera Damaged" value="Damaged"><label for="input_7_13_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_13_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[13][2]" style="width:100%;box-sizing:border-box" aria-label="Back Camera Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_14">Ear Speaker Microphone</label></th>
+              <td class="form-matrix-values"><input id="input_7_14_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[14][0]" aria-label="Ear Speaker Microphone Good" value="Good"><label for="input_7_14_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_14_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[14][1]" aria-label="Ear Speaker Microphone Damaged" value="Damaged"><label for="input_7_14_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_14_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[14][2]" style="width:100%;box-sizing:border-box" aria-label="Ear Speaker Microphone Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_15">Loudspeaker Microphone</label></th>
+              <td class="form-matrix-values"><input id="input_7_15_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[15][0]" aria-label="Loudspeaker Microphone Good" value="Good"><label for="input_7_15_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_15_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[15][1]" aria-label="Loudspeaker Microphone Damaged" value="Damaged"><label for="input_7_15_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_15_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[15][2]" style="width:100%;box-sizing:border-box" aria-label="Loudspeaker Microphone Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_16">Board Issue</label></th>
+              <td class="form-matrix-values"><input id="input_7_16_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[16][0]" aria-label="Board Issue Good" value="Good"><label for="input_7_16_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_16_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[16][1]" aria-label="Board Issue Damaged" value="Damaged"><label for="input_7_16_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_16_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[16][2]" style="width:100%;box-sizing:border-box" aria-label="Board Issue Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_17">Battery</label></th>
+              <td class="form-matrix-values"><input id="input_7_17_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[17][0]" aria-label="Battery Good" value="Good"><label for="input_7_17_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_17_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[17][1]" aria-label="Battery Damaged" value="Damaged"><label for="input_7_17_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_17_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[17][2]" style="width:100%;box-sizing:border-box" aria-label="Battery Notes" value=""></td>
+            </tr>
+            <tr class="form-matrix-tr form-matrix-value-tr">
+              <th scope="row" class="form-matrix-headers form-matrix-row-headers"><label id="label_7_row_18">Sim Reader</label></th>
+              <td class="form-matrix-values"><input id="input_7_18_0" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[18][0]" aria-label="Sim Reader Good" value="Good"><label for="input_7_18_0" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_18_1" class="form-checkbox" type="checkbox" name="q7_deviceChecklist[18][1]" aria-label="Sim Reader Damaged" value="Damaged"><label for="input_7_18_1" class="matrix-choice-label matrix-checkbox-label"></label></td>
+              <td class="form-matrix-values"><input id="input_7_18_2" class="form-textbox" type="text" size="5" name="q7_deviceChecklist[18][2]" style="width:100%;box-sizing:border-box" aria-label="Sim Reader Notes" value=""></td>
+            </tr>
+          </tbody></table>
         </div>
-      </div>
 
       <!-- Security / Lock Credentials -->
       <div class="space-y-4">
